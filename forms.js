@@ -55,7 +55,10 @@ function display() {
     //add a submit button to the form
     var submit = $("<button />", {
         text: "Serialize",
-        click: serialize
+        click: function(e) {
+            e.preventDefault();
+            serialize();
+        }
     });
     $("#products").append(submit);
 }
