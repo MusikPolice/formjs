@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="https://raw.github.com/wycats/handlebars.js/1.0.0/dist/handlebars.js"></script>
+		<script src="forms.js"></script>		
+	</head>
+	<body>
+		<h1>Hello World!</h1>
+		<form id="products"></form>
+
+		<!-- template for a product form -->
+		<script id="product-template" type="text/handlebars-template">
+			<div class="product" name={{id}}>
+				<ul>
+					<li>id: <input type="text" value="{{id}}" name="id" /></li>
+					<li>type: <input type="text" value="{{type}}" name="type" /></li>
+					<li>colour: <input type="text" value="{{colour}}" name="colour" /></li>
+				</ul>
+			</div>
+		</script>
+	</body>
+<html>
