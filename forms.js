@@ -2,22 +2,28 @@
 /*global $, jQuery, console, Handlebars*/
 
 //this function serializes the form into json
-//TODO: there seems to be a synchronicity problem here such that serialized is empty at the end
-//  maybe use traditional loops instead of .each to fix it?
 function serialize() {
     "use strict";
 
+    //iterate over each product in the dom
     var serialized = [];
     $("#products").children("div.product").each(function() {
+
+        //serialize each product by looking for input[type=text] elements
         var product = {};
+        console.log("serializing " + $(this).attr("name"));
         $(this).find("input[type='text']").each(function() {
+            //each input has a name attribute with the name of the value
+            console.log("serializing " + $(this).attr("name"));
             var key = $(this).attr("name");
             var value = $(this).val();
             product[key] = value;
         });
-        serialized[$(this).attr("name")] = product;
+        //add the newly serialized product to the array
+        serialized.push(product);
     });
 
+    //TODO: this needs to be saved to a file
     console.log(JSON.stringify(serialized));
 }
 
