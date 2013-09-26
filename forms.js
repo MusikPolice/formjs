@@ -7,7 +7,7 @@ function serialize() {
 
     //iterate over each product in the dom
     var serialized = [];
-    $("#products").children("div.product").each(function() {
+    $("#products").children("form.product").each(function() {
 
         //serialize each product by looking for input[type=text] elements
         var product = {};
@@ -36,12 +36,14 @@ function display() {
         {
             "id": "product.id.1",
             "type": "bundle",
-            "colour": "blue"
+            "colour": "blue",
+            "sortorder": 1
         },
         {
             "id": "product.id.2",
             "type": "bundle",
-            "colour": "red"
+            "colour": "red",
+            "sortorder": 2
         }
     ];
 

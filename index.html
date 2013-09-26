@@ -3,6 +3,8 @@
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 
+		<link href="style.css" media="all" rel="stylesheet" type="text/css"/>
+
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="https://raw.github.com/wycats/handlebars.js/1.0.0/dist/handlebars.js"></script>
 		<script src="forms.js"></script>		
@@ -13,13 +15,27 @@
 
 		<!-- template for a product form -->
 		<script id="product-template" type="text/handlebars-template">
-			<div class="product" name={{id}}>
-				<ul>
-					<li>id: <input type="text" value="{{id}}" name="id" /></li>
-					<li>type: <input type="text" value="{{type}}" name="type" /></li>
-					<li>colour: <input type="text" value="{{colour}}" name="colour" /></li>
-				</ul>
-			</div>
+			<form class="product" name={{id}}>
+				<label>
+					<span>Unique Identifier</span>
+					<input type="text" value="{{id}}" name="id" placeholder="A unique identifier for the product" />
+				</label>
+
+				<label>
+					<span>Type</span>
+					<input type="text" value="{{type}}" name="type" placeholder="The product type" />
+				</label>
+
+				<label>
+					<span>Colour</span>
+					<input type="text" value="{{colour}}" name="colour" placeholder="The colour of the product" />
+				</label>
+
+				<label>
+					<span>Sort Order</span>
+					<input type="number" min="0" value="{{sortorder}}" name="sortorder" placeholder="0" />
+				</label>
+			</form>
 		</script>
 
 		<script type="text/javascript">
